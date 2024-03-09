@@ -1,0 +1,326 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: url("../../public/imagenes/minimarket.jpg") ;
+    background-attachment: fixed;
+    background-repeat: round;
+}
+
+.contenedorBody{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedorRegistro{
+    background-color: #fff;
+    width: 100%;
+    max-width: 450px;
+    padding: 50px 60px 70px;
+    text-align: center;
+    border-radius: 25px;
+    
+}
+.contenedorCarrito{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedorTabla{
+    background-color: #fff;
+    width: 100%;
+    max-width: 600px;
+    padding: 50px 60px 70px;
+    text-align: center;
+    border-radius: 25px;
+    display: inline-block;
+}
+.cuerpo .contenedorRegistro h3{
+    margin: 10px auto;
+    font-size: 30px;
+}
+.cuerpo .contenedorRegistro .loginForm{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+}
+.cuerpo .contenedorRegistro .loginForm form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    
+}
+.cuerpo .contenedorRegistro .loginForm form label{
+    font-size: 25px;
+    margin: 10px auto;
+
+    
+}
+.cuerpo .contenedorRegistro .loginForm form input{
+    font-size: 25px;
+    margin: 20px auto;
+    width: 80%;
+}
+.cuerpo .contenedorRegistro .loginForm form .inputLogin{
+    font-size: 25px;
+    margin-top: 40px;
+    width: 250px;
+}
+
+.contenedorRegistro p{
+    font-size: 18px;
+    margin: 10px auto;
+}
+.contenedorRegistro a{
+    width: 200px;
+    height: 40px;
+    margin: 0px auto;
+    font-size: 18px;
+    text-decoration: none;
+    text-align: center;
+}
+
+/*Registro*/
+
+.contenedorRegistroForm{
+    height: 100%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+.cuerpo .contenedorRegistroForm h3{
+    margin: 10px auto;
+    font-size: 30px;
+}
+.cuerpo .contenedorRegistro .registroForm{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+}
+.cuerpo .contenedorRegistroForm .registroForm form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+.cuerpo .contenedorRegistroForm .registroForm form label{
+    font-size: 25px;
+    margin: 5px auto;
+}
+.cuerpo .contenedorRegistroForm .registroForm form input{
+    font-size: 25px;
+    margin: 5px auto;
+}
+.cuerpo .contenedorRegistroForm .registroForm form .inputRegistrar{
+    font-size: 20px;
+    margin-top: 40px;
+    width: 200px;
+    height: 30px;
+}
+.contenedorRegistroForm p{
+    font-size: 18px;
+    margin: 15px auto;
+}
+.contenedorRegistroForm a{
+    width: 200px;
+    height: 40px;
+    margin: 0px auto;
+    font-size: 18px;
+    text-decoration: none;
+    text-align: center;
+    margin: 10px auto;
+}
+
+/*MENU*/
+
+.cuerpoMenu .contenedorProductos{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-right: 5%;
+    padding-left: 5%;
+    padding-bottom: 5%;
+    padding-top: 0px;
+    justify-content: center;
+}
+.cuerpoMenu .contenedorProductos .divProductos{
+    background: #04B79F;
+    width: 250px;
+    height: 250px;
+    margin: 10px;
+       
+}
+.cuerpoMenu .contenedorProductos .divProductos .producto{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.cuerpoMenu .contenedorProductos .divProductos .producto img{
+    height: 80px;
+    width: 80px;
+    margin: 10px auto;
+}
+.cuerpoMenu .contenedorProductos .divProductos .producto h3{
+    text-align: center ;
+    font-size: 20px;
+}
+.cuerpoMenu .contenedorProductos .divProductos .producto p{
+    text-align:center;
+}
+.cuerpoMenu .contenedorProductos .divProductos .producto a{
+    text-align: center;
+}
+
+
+
+
+a.ver-carrito {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #04B79F; /* Cambia el color de fondo a tu preferencia */
+    color: #fff; /* Cambia el color del texto a tu preferencia */
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease; /* Agrega una transición suave para el cambio de color de fondo */
+
+}
+
+a.ver-carrito:hover {
+    background-color: #037c82; /* Cambia el color de fondo al pasar el ratón por encima */
+}
+
+.producto-en-carrito {
+    margin-top: 5%;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.producto-info {
+    font-size: 16px;
+}
+
+.accion-carrito {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 5px 10px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.carrito-vacio {
+    font-size: 18px;
+    color: #ff0000;
+}
+
+.volver-a-comprar {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #04B79F;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.total-carrito {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.detalle-pedido {
+    display: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+
+/*Error Login*/
+.contenedorBodyError{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contenedorError{
+    background-color: #fff;
+    width: 100%;
+    max-width: 450px;
+    padding: 50px 60px 70px;
+    text-align: center;
+    border-radius: 25px;
+}
+.subtexto{
+    margin-top: 40px;
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+.vinculoLogin{
+    display: block;
+    font-size: 18px;
+    color:#3c9cdb;
+    margin-bottom: 20px;
+    
+}
+.vinculoRegistro{
+    display: block;
+    font-size: 18px;
+    color:#3c9cdb;
+}
+.vinculoLogin:hover{
+    color:#15297c;
+}
+.vinculoRegistro:hover{
+    color:#15297c;
+}
+
+/*tabla de personal*/
+
+.mi-contenedor {
+    background-color: white; /* Fondo blanco */
+    padding: 10px; /* Espaciado interno para mejorar la apariencia */
+    width: 100%;
+    
+}
+.fomularioEditar{
+    margin-top: 50px;
+    background-color: white; /* Fondo blanco */
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 550px;
+    width: 400px;
+}
+.formularioEdit{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    width: 90%;
+}
