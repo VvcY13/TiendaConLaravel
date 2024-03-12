@@ -68,9 +68,9 @@ class AdministradorProductosController extends Controller
             $imageName = $image->getClientOriginalName();
         
             
-            $path = Storage::disk('local')->put($imageName, $image);  
-            if (!Storage::disk('local')->exists('imagenesProductos')) {
-                Storage::disk('local')->makeDirectory('imagenesProductos');
+            $path = Storage::disk('public')->put($imageName, $image);  
+            if (!Storage::disk('public')->exists('imagenesProductos')) {
+                Storage::disk('public')->makeDirectory('imagenesProductos');
             }
             if ($path) {  
                 //$producto->imagen = $path;
