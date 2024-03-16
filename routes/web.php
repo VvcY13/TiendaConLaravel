@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdministradorPersonalController;
 use App\Http\Controllers\AdministradorProductosController;
+use App\Http\Controllers\agregarCarritoController;
 use App\Http\Controllers\clienteNosotrosController;
 use App\Http\Controllers\clienteProductosController;
 use App\Http\Controllers\HomeAdministradorController;
@@ -54,3 +55,5 @@ Route::get('/obtenerPorIdProducto/{id}',[AdministradorProductosController::class
 Route::put('/actualizarProducto/{id}',[AdministradorProductosController::class,'actualizarProducto'])->name('actualizarProducto');
 Route::get('/administradorAgregarProducto',[AdministradorProductosController::class,'agregarNuevoProducto'])->name('administradorAgregarProducto.show');
 Route::post('/guardarNuevoProducto',[AdministradorProductosController::class,'guardarNuevoProducto'])->name('guardarNuevoProducto');
+
+Route::post('/agregarCarrito',[agregarCarritoController::class,'agregarCarrito'])->name('agregarCarrito');

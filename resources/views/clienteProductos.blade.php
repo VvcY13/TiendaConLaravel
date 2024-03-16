@@ -36,15 +36,32 @@
                 <img class="card-img-top" src="{{ asset('storage/'.$productos->imagen) }}">
                 <div class="card-body">
                     <h3 class="card-title">{{ $productos->nombre }}</h3>
+                    <p class="card-text">id{{ $productos->id }}</p>
                     <p class="card-text">Presentacion {{ $productos->presentacion }}</p>
                     <p class="card-text">Categoria {{ $productos->categoria }}</p>
                     <p class="card-text">Stock {{ $productos->stock }} und</p>
                     <p class="card-text">S/{{ $productos->precio_venta }}</p>
+                    <form action="{{ route('agregarCarrito') }}" method="POST">
+                        @csrf
+                        <input type="hidden" name="id" value="{{ $productos->id }}">
+
                     <button class="btn btn-primary">Comprar</button>
+                    </form>
                 </div>
             </div>
             @endforeach
         </div>
     </div>
+    @if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+    @endif
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        {{ $errors->first('error') }}
+    </div>
+@endif
+
 </body>
 </html>
