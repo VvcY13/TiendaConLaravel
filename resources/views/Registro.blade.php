@@ -23,7 +23,7 @@
                     <br>
                     <input class="form-control" type="text" name="lastName" id="lastName">
                     <br>
-                    <input class="form-control" type="hidden" name="cargo" id="cargo" value="1">
+                    <input class="form-control" type="hidden" name="cargo" id="cargo" value="2">
                     
                     <label for="email">Ingresa tu correo</label>
                     <br>

@@ -41,7 +41,7 @@
 
                 
 
-                <button type="submit" class="btn btn-primary">Actualizar Usuario</button>
+                <button type="submit" class="btn btn-primary">Actualizar Producto</button>
             </form>
         </div>
     </div>

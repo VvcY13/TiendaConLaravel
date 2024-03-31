@@ -16,7 +16,7 @@ class Carrito extends Model
         'cantidad'
     ];
     public function productos() {
-        return $this->belongsTo(Productos::class, 'id');
+        return $this->belongsTo(Productos::class, 'id_producto');
     }
     public function usuario(){
         return $this->belongsTo(User::class,'id');

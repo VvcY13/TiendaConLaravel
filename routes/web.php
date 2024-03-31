@@ -5,10 +5,12 @@ use App\Http\Controllers\AdministradorProductosController;
 use App\Http\Controllers\agregarCarritoController;
 use App\Http\Controllers\clienteNosotrosController;
 use App\Http\Controllers\clienteProductosController;
+use App\Http\Controllers\editarCarritoController;
 use App\Http\Controllers\HomeAdministradorController;
 use App\Http\Controllers\HomeClienteController;
 use App\Http\Controllers\obtenerPersonalController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\verCarritoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 
@@ -57,3 +59,15 @@ Route::get('/administradorAgregarProducto',[AdministradorProductosController::cl
 Route::post('/guardarNuevoProducto',[AdministradorProductosController::class,'guardarNuevoProducto'])->name('guardarNuevoProducto');
 
 Route::post('/agregarCarrito',[agregarCarritoController::class,'agregarCarrito'])->name('agregarCarrito');
+
+
+Route::get('/verCarrito', [verCarritoController::class, 'verCarrito'])->name('verCarrito');
+
+
+Route::post('/aumentarcantidad/{idProducto}',[editarCarritoController::class,'aumentarCantidad'] )->name('aumentarCantidad');
+
+
+Route::post('/reducircantidad/{idProducto}', [editarCarritoController::class,'reducirCantidad'])->name('reducirCantidad');
+
+
+Route::delete('/eliminarproducto/{idProducto}',[editarCarritoController::class,'eliminarProducto'] )->name('eliminarProducto');
