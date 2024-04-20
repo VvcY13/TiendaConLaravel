@@ -26,7 +26,7 @@
     <div class="cuerpoMenu" style="padding-top: 80px;">
         <div style="margin:10px; ">
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <a href="" class="btn btn-primary me-md-2">Ver Carrito</a>
+                <a href="{{ route('verCarrito') }}" class="btn btn-primary me-md-2">Ver Carrito</a>
             </div>   
         </div>
         <div class="contenedorProductos">
