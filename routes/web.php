@@ -1,5 +1,5 @@
 <?php
-
+use App\Models\User;
 use App\Http\Controllers\AdministradorPersonalController;
 use App\Http\Controllers\AdministradorProductosController;
 use App\Http\Controllers\agregarCarritoController;
@@ -13,6 +13,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\verCarritoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use Laravel\Socialite\Facades\Socialite;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,4 +71,25 @@ Route::post('/aumentarcantidad/{idProducto}',[editarCarritoController::class,'au
 Route::post('/reducircantidad/{idProducto}', [editarCarritoController::class,'reducirCantidad'])->name('reducirCantidad');
 
 
-Route::delete('/eliminarproducto/{idProducto}',[editarCarritoController::class,'eliminarProducto'] )->name('eliminarProducto');
+Route::delete('/eliminarproducto/{idProducto}',[editarCarritoController::class,'eliminarProducto'] )->name('eliminarProductoCarrito');
+
+
+//google rutas
+Route::get('/google-auth/redirect', function () {
+    return Socialite::driver('google')->redirect();
+});
+ 
+Route::get('/google-auth/callback', function () {
+    $user_google = Socialite::driver('google')->stateless()->user();
+
+    $user = User::updateOrCreate(
+        ['google_id' => $user_google->id],
+        ['name' => $user_google->name, 'email' => $user_google->email,'cargo'=>2, 'perfil' => false]
+    );
+
+    Auth::login($user);
+
+    return redirect("/homeCliente");
+ 
+    // $user->token
+});

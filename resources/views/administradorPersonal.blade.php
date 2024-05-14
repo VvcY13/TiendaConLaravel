@@ -75,7 +75,12 @@
             </div>
 
             <div class="col-md-2 d-flex align-items-center">
-                <p>{{ $user->lastName }}</p>
+                <!--<p>{{ $user->lastName }}</p>-->
+                @if($user->lastName == null)
+                    {{$user->google_id}}
+                @else
+                    {{$user->lastName}}
+                @endif
             </div>
 
             <div class="col-md-2 d-flex align-items-center">

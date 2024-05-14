@@ -62,20 +62,17 @@ class AdministradorProductosController extends Controller
         $producto->precio_compra = $request->precio_compra;
         $producto->stock = $request->stock;
     
-      
-        if ($request->hasFile('imagen')) {
-            $image = $request->file('imagen');
-            $imageName = $image->getClientOriginalName();
-        
-            
-            $path = Storage::disk('public')->put($imageName, $image);  
-            if (!Storage::disk('public')->exists('imagenesProductos')) {
-                Storage::disk('public')->makeDirectory('imagenesProductos');
-            }
-            if ($path) {  
-                //$producto->imagen = $path;
-            $producto->imagen = $path;
-            };
+       
+if ($request->hasFile('imagen')) {
+    $image = $request->file('imagen');
+    $imageName = $image->getClientOriginalName();
+
+    $path = $image->storeAs('imagenesProductos', $imageName, 'public');
+    
+    if ($path) {
+        $producto->imagen = $path;
+    }
+}
     
         $producto->save();
     
@@ -88,4 +85,4 @@ class AdministradorProductosController extends Controller
     }     
     
 }
-}
+

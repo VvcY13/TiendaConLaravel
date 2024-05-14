@@ -44,7 +44,7 @@
                     @csrf
                     <button type="submit">Reducir</button>
                 </form>
-                <form action="{{ route('eliminarProducto', ['idProducto' => $idProducto]) }}" method="POST">
+                <form action="{{ route('eliminarProductoCarrito', ['idProducto' => $idProducto]) }}" method="POST">
                     @csrf
                     @method('DELETE')
                     <button type="submit">Eliminar</button>

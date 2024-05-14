@@ -13,7 +13,9 @@ class RegisterController extends Controller
         return view('registro');
     }
     public function register(RegisterRequest $request){
-        $user = User::create($request->validated());
+        $userData = $request->validated();
+        $userData['perfil'] = true;
+        $user = User::create($userData);
         return redirect()->route('inicio')->with('Exito', 'Cuenta creada');
     
     }

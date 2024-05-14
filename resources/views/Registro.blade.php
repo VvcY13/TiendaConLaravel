@@ -15,16 +15,11 @@
             <div class="registroForm">
                 <form action="/registro" method="POST">
                     @csrf
-                    <label for="firstName">Ingresa tu Nombre</label>
+                    <label for="name">Ingresa tus Nombres y Apellidos</label>
                     <br>
-                    <input class="form-control" type="text" name="firstName" id="firstName">
-                    <br>
-                    <label for="lastName">Ingresa tu Apellido</label>
-                    <br>
-                    <input class="form-control" type="text" name="lastName" id="lastName">
+                    <input class="form-control" type="text" name="name" id="name">
                     <br>
                     <input class="form-control" type="hidden" name="cargo" id="cargo" value="2">
-                    
                     <label for="email">Ingresa tu correo</label>
                     <br>
                     <input class="form-control" type="text" name="email" id="email">
