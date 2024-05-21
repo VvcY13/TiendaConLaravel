@@ -28,7 +28,7 @@
                     <br>
                     <input class="form-control" type="password" name="password" id="contraseña">
                     <br><br>
-                    <input class="btn btn-primary" class="inputRegistrar" type="submit" value="Registrarme">
+                    <input class="btn btn btn-success" class="inputRegistrar" type="submit" value="Registrarme">
                 </form>
             </div>
             <p><strong>¿Ya tienes una cuenta?</strong></p>

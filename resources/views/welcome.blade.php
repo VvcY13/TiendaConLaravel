@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-        <title>Minimarket</title>
+        <title>GREEN-THREAD</title>
         @vite(['resources/css/app.css'])
     </head>
     <header>
@@ -25,10 +25,10 @@
                         <br>
                         <input class="form-control" type="password" name="password" id="password">
                         <br><br>
-                        <input class="btn btn-primary" class="inputLogin" type="submit" value="Iniciar Sesion">
+                        <input class="btn btn btn-success" class="inputLogin" type="submit" value="Iniciar Sesion">
                     </form>
                     <br>
-                    <a href="/google-auth/redirect" class="btn btn-primary" value="Iniciar Sesion Google">Google</a>
+                    <a href="/google-auth/redirect" class="btn btn btn-success" value="Iniciar Sesion Google">Google</a>
                     <br>
                     
                 </div>
