@@ -16,7 +16,7 @@
                 <a class="navbar-brand" href="{{ route('homeAdministrador.show') }}">Home</a>
                 <a class="navbar-brand" href="{{ route('administradorPersonal.show') }}">Personal</a>
                 <a class="navbar-brand" href="{{ route('administradorProductos.show') }}">Productos</a>
-                <a class="navbar-brand" href="{{ route('login.show') }}" id="">Cerrar sesión</a>
+                <a class="navbar-brand" href="{{ route('logout') }}" id="">Cerrar sesión</a>
                
             </div>
         </nav>
@@ -45,70 +45,45 @@
         <div class="container mi-contenedor"> <!-- Contenedor principal -->
             <div class="row g-3"> <!-- Fila que contendrá las columnas -->
                 <!-- Encabezados de las columnas -->
-        <div class="col-md-2 d-flex align-items-center">
-            <p>Nombres</p>
-        </div>
-
-        <div class="col-md-2 d-flex align-items-center">
-            <p>Apellidos</p>
-        </div>
-
-        <div class="col-md-2 d-flex align-items-center">
-            <p>Correo</p>
-        </div>
-
-        <div class="col-md-2 d-flex align-items-center">
-            <p>Cargo</p>
-        </div>
-
-        <div class="col-md-2 d-flex align-items-center">
-            <p>Editar</p>
-        </div>
-
-        <div class="col-md-2 d-flex align-items-center">
-            <p>Eliminar</p>
-        </div>
+                <table class="table caption-top">
+                    <thead>
+                     <tr>
+                       <th scope="col">Nombres y Apellidos</th>
+                       <th scope="col">Correo</th>
+                       <th scope="col">Cargo</th>
+                       <th scope="col">Editar</th>
+                       <th scope="col">Eliminar</th>
+                     </tr>
+                   </thead>
+                   <tbody>
+                   @foreach ($users as $user)
+                                 <tr>
+                                 <td>{{ $user->name }}</td>
+                                 <td>{{ $user->email }}</td>
+                                 <td>
+                                     @if($user->cargo == 1)
+                                         Administrador
+                                     @else
+                                         Cliente
+                                     @endif
+                                 </td>
+                                 <td>
+                                 <a href="{{ route('obtenerPorIdUsuario', $user->id) }}" class="btn btn-warning btn-sm">Editar Usuario</a>
+                                 </td>
+                                 <td>
+                                 <form class="col-md-2 d-flex align-items-center" action="{{ route('eliminarUsuario', $user->id) }}" method="post">
+                                 @csrf
+                                 @method('delete')
+                                 <div class="col-md-2 d-flex align-items-center">
+                                     <button type="submit" class="btn btn-danger btn-sm">Eliminar Usuario</button>
+                                 </div>
+                             </form>
+                                 </td>
+                                 </tr>
+                                 @endforeach
+                          </tbody>
+                         </table>       
        
-        @foreach ($users as $user)
-            <div class="col-md-2 d-flex align-items-center">
-                <p>{{ $user->firstName }}</p>
-            </div>
-
-            <div class="col-md-2 d-flex align-items-center">
-                <!--<p>{{ $user->lastName }}</p>-->
-                @if($user->lastName == null)
-                    {{$user->google_id}}
-                @else
-                    {{$user->lastName}}
-                @endif
-            </div>
-
-            <div class="col-md-2 d-flex align-items-center">
-                <p>{{ $user->email }}</p>
-            </div>
-
-            <div class="col-md-2 d-flex align-items-center">
-                <p>
-                    @if($user->cargo == 1)
-                        Administrador
-                    @else
-                        Cliente
-                    @endif
-                </p>
-            </div>
-
-            <div class="col-md-2 d-flex align-items-center">
-                <a href="{{ route('obtenerPorIdUsuario', $user->id) }}" class="btn btn-warning btn-sm">Editar Usuario</a>
-            </div>
-
-            <form class="col-md-2 d-flex align-items-center" action="{{ route('eliminarUsuario', $user->id) }}" method="post">
-                @csrf
-                @method('delete')
-                <div class="col-md-2 d-flex align-items-center">
-                    <button type="submit" class="btn btn-danger btn-sm">Eliminar Usuario</button>
-                </div>
-            </form>
-        @endforeach
             </div>
         </div>        
  

@@ -30,6 +30,7 @@
                     <br>
                     <a href="/google-auth/redirect" class="btn btn-primary" value="Iniciar Sesion Google">Google</a>
                     <br>
+                    
                 </div>
                 <p><strong>¿No tienes cuenta?</strong></p>
                 <a href="{{ route('registro') }}">Registrarme</a>

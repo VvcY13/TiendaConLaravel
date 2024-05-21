@@ -22,8 +22,7 @@ class AdministradorPersonalController extends Controller
     }
     public function actualizarUsuario(Request $request, $id){
         $usuario = User::find($id);
-        $usuario->firstName = $request->input('firstName');
-        $usuario->lastName = $request->input('lastName');
+        $usuario->name = $request->input('name');
         $usuario->cargo = $request->input('cargo');
         $usuario->email = $request->input('email');
 
@@ -40,15 +39,14 @@ class AdministradorPersonalController extends Controller
     }
     public function  guardarNuevoUsuario(Request $request) {
         $request->validate([
-            'firstName' => 'required|string',
-            'lastName' => 'required|string',
+            'name' => 'required|string',
             'cargo' => 'required|integer',
             'email' => 'required|email',
             'password' => 'required|string|min:8',
         ]);
         $user = new User;
-        $user->firstName=$request->input('firstName');
-        $user->lastName=$request->input('lastName');
+       
+        $user->name=$request->input('name');
         $user->cargo= $request->input('cargo');
         $user->email= $request->input('email');
         $user->password=bcrypt($request->input('password'));

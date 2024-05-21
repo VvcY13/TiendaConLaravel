@@ -16,7 +16,7 @@
                 <a class="navbar-brand" href="{{ route('homeCliente.show') }}">Inicio</a>
                 <a class="navbar-brand" href="{{ route('clienteProductos.show') }}">Productos</a>
                 <a class="navbar-brand" href="{{ route('clienteNosotros.show') }}">Nosotros</a>
-                <a class="navbar-brand" href="{{ route('login.show') }}" id="">Cerrar sesión</a>
+                <a class="navbar-brand" href="{{ route('logout') }}" id="">Cerrar sesión</a>
                
             </div>
         </nav>

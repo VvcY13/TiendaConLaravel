@@ -25,10 +25,8 @@
 
                 
                 <div class="mb-3">
-                    <label for="firstName" class="form-label">Nombres:</label>
-                    <input type="text" name="firstName" value="{{ $usuario->firstName }}" class="form-control" required>
-                    <label for="lastName" class="form-label">Apellidos:</label>
-                    <input type="text" name="lastName" value="{{ $usuario->lastName }}" class="form-control" required>
+                    <label for="name" class="form-label">Nombres y Apellidos:</label>
+                    <input type="text" name="name" value="{{ $usuario->name }}" class="form-control" required>
                     <label for="cargo" class="form-label">Cargo:</label>
                     <input type="text" name="cargo" value="{{ $usuario->cargo }}" class="form-control" required>
                     <label for="email" class="form-label">email:</label>

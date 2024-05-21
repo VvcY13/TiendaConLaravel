@@ -16,7 +16,7 @@
                 <a class="navbar-brand" href="{{ route('homeAdministrador.show') }}">Home</a>
                 <a class="navbar-brand" href="{{ route('administradorPersonal.show') }}">Personal</a>
                 <a class="navbar-brand" href="{{ route('administradorProductos.show') }}">Productos</a>
-                <a class="navbar-brand" href="{{ route('login.show') }}" id="">Cerrar sesión</a>
+                <a class="navbar-brand" href="{{ route('logout') }}" id="">Cerrar sesión</a>
                
             </div>
         </nav>

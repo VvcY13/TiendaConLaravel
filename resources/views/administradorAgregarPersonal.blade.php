@@ -25,12 +25,11 @@
 
                 
                 <div class="mb-3">
-                    <label for="firstName" class="form-label">Nombres:</label>
-                    <input type="text" name="firstName"  class="form-control" required>
-                    <label for="lastName" class="form-label">Apellidos:</label>
-                    <input type="text" name="lastName"  class="form-control" required>
+                    <label for="name" class="form-label">Nombres y apellidos:</label>
+                    <input type="text" name="name"  class="form-control" required>
                     <label for="cargo" class="form-label">Cargo:</label>
                     <input type="text" name="cargo" class="form-control" required>
+                    <input hidden type="text" name="perfil" class="form-control" required value=1>
                     <label for="email" class="form-label">email:</label>
                     <input type="text" name="email" class="form-control" required>
                     <label for="password" class="form-label">Contraseña:</label>
